@@ -1,0 +1,6 @@
+{
+  "name": "Towlee Consulting",
+  "description": "大手上場企業をサポートするプロフェッショナル・コンサルティングファーム「Towlee Consulting（トウリー・コンサルティング）」のホームページ。桃李不言下自成蹊を理念とし、静寂と知性を漂わせる極めて洗練された高級デザイン。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
