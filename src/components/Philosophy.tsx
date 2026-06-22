@@ -5,9 +5,10 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
+// @ts-ignore
+import textureImgUrl from '../assets/images/towlee_texture_1782028261935.jpg';
 
 export default function Philosophy() {
-  const textureImgUrl = '/src/assets/images/towlee_texture_1782028261935.jpg';
 
   return (
     <section

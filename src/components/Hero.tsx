@@ -6,6 +6,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { MousePointerClick, ChevronDown } from 'lucide-react';
+// @ts-ignore
+import heroImgUrl from '../assets/images/towlee_hero_1782028246619.jpg';
 
 interface HeroProps {
   onNavClick: (sectonId: string) => void;
@@ -13,7 +15,6 @@ interface HeroProps {
 
 export default function Hero({ onNavClick }: HeroProps) {
   // 生成された画像のパス
-  const heroImgUrl = '/src/assets/images/towlee_hero_1782028246619.jpg';
 
   return (
     <section
