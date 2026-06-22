@@ -2,17 +2,18 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # またはお客様のデフォルトブランチ名（masterなど）
+    branches: 'main' # またはお使いのデフォルトブランチ名 (master 等) に変更してください
 
+# GITHUB_TOKEN のパーミッションを設定
 permissions:
   contents: read
-  pages: write
   id-token: write
+  pages: write
 
+# クラッシュ回避のため、同時実行されるジョブをキャンセル
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -28,10 +29,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
@@ -42,6 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # Vite のデフォルト出力先ディレクトリである dist を指定します
           path: './dist'
 
       - name: Deploy to GitHub Pages
