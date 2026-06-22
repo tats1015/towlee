@@ -129,28 +129,36 @@ export default function Services() {
               </div>
 
               {/* 詳細項目（アコーディオン） */}
-              <div className="mt-4 pt-6 border-t border-brand-text-primary/5 justify-end">
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setExpandedService(expandedService === service.id ? null : service.id);
-                  }}
-                  className="text-[10px] tracking-[0.2em] uppercase text-brand-gold flex items-center gap-1 cursor-pointer focus:outline-none text-left"
+              <div 
+                className="mt-6 pt-6 border-t border-brand-text-primary/5 cursor-pointer group/focus select-none"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setExpandedService(expandedService === service.id ? null : service.id);
+                }}
+              >
+                <div
+                  className="flex items-center justify-between w-full py-2 focus:outline-none"
                 >
-                  Focus Areas <ChevronRight className={`h-3 w-3 transition-transform duration-300 ${expandedService === service.id ? 'rotate-90' : 'group-hover:translate-x-1'}`} />
-                </button>
+                  <span className="text-[10px] tracking-[0.2em] uppercase text-brand-gold font-semibold flex items-center gap-1.5">
+                    Focus Areas
+                  </span>
+                  <div className="p-1 px-1.5 rounded-xs bg-brand-text-primary/[0.03] group-hover/focus:bg-brand-gold/10 transition-colors duration-300">
+                    <ChevronRight className={`h-3 w-3 text-brand-gold transition-transform duration-300 ${expandedService === service.id ? 'rotate-90' : 'group-hover/focus:translate-x-0.5'}`} />
+                  </div>
+                </div>
                 
-                {/* クリック時またはホバー時に美しく表示される詳細項目リスト */}
-                <div className={`mt-4 overflow-hidden transition-all duration-700 ease-in-out ${
-                  expandedService === service.id
-                    ? 'max-h-[300px] opacity-100'
-                    : 'max-h-0 opacity-0 lg:group-hover:max-h-[220px] lg:group-hover:opacity-100'
-                }`}>
-                  <ul className="space-y-2.5">
+                {/* クリック時に美しく開閉する詳細領域。高さ制限＆トランジションで滑らかに開閉 */}
+                <div 
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    expandedService === service.id
+                      ? 'max-h-[350px] opacity-100 mt-4'
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <ul className="space-y-3 pb-2">
                     {service.details.map((detail, idx) => (
-                      <li key={idx} className="text-[11px] text-brand-text-secondary flex items-start gap-2 leading-relaxed">
-                        <span className="text-brand-gold mt-1">•</span>
+                      <li key={idx} className="text-[11px] text-brand-text-secondary flex items-start gap-2.5 leading-relaxed hover:text-brand-text-primary transition-colors duration-300">
+                        <span className="text-brand-gold mt-1 text-xs">•</span>
                         <span>{detail}</span>
                       </li>
                     ))}

@@ -21,9 +21,22 @@ export default function App() {
   const handleScrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      // 控えめにオフセットを設けるために、滑らかにスクロール
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      if (sectionId === 'hero') {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        return;
+      }
+
+      // 各セクションの余白パディングを相殺し、タイトル位置をヘッダー直下へ正確に寄せるため、内側の実コンテンツコンテナをターゲットにします
+      const innerContent = element.querySelector('.max-w-7xl') || element;
+      const isMobile = window.innerWidth < 768;
+      
+      // ヘッダーの高さ（約70px）に寄り添う快適な余白
+      const headerOffset = isMobile ? 80 : 100;
+      
+      const elementPosition = innerContent.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
 
       window.scrollTo({
