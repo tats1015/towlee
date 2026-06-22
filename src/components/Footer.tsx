@@ -28,7 +28,7 @@ export default function Footer({ onNavClick }: FooterProps) {
             </span>
           </div>
           <p className="max-w-xs text-[10px] text-brand-text-secondary/40 leading-relaxed font-light font-serif-jp">
-            株式会社Towlee (トウリー)<br />
+            株式会社Towlee (トーリー)<br />
             東京都渋谷区道玄坂1丁目10番8号 渋谷道玄坂東急ビル<br />
             クライアント企業様のリアルパートナーとして役割を全うします。
           </p>

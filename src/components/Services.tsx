@@ -10,6 +10,7 @@ import { ServiceItem } from '../types';
 
 export default function Services() {
   const [activeService, setActiveService] = useState<string | null>(null);
+  const [expandedService, setExpandedService] = useState<string | null>(null);
 
   const services: ServiceItem[] = [
     {
@@ -129,12 +130,23 @@ export default function Services() {
 
               {/* 詳細項目（アコーディオン） */}
               <div className="mt-4 pt-6 border-t border-brand-text-primary/5 justify-end">
-                <span className="text-[10px] tracking-[0.2em] uppercase text-brand-gold flex items-center gap-1 cursor-pointer">
-                  Focus Areas <ChevronRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                </span>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setExpandedService(expandedService === service.id ? null : service.id);
+                  }}
+                  className="text-[10px] tracking-[0.2em] uppercase text-brand-gold flex items-center gap-1 cursor-pointer focus:outline-none text-left"
+                >
+                  Focus Areas <ChevronRight className={`h-3 w-3 transition-transform duration-300 ${expandedService === service.id ? 'rotate-90' : 'group-hover:translate-x-1'}`} />
+                </button>
                 
-                {/* ホバー時に美しく表示される詳細項目リスト */}
-                <div className="mt-4 overflow-hidden max-h-0 group-hover:max-h-[220px] transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                {/* クリック時またはホバー時に美しく表示される詳細項目リスト */}
+                <div className={`mt-4 overflow-hidden transition-all duration-700 ease-in-out ${
+                  expandedService === service.id
+                    ? 'max-h-[300px] opacity-100'
+                    : 'max-h-0 opacity-0 lg:group-hover:max-h-[220px] lg:group-hover:opacity-100'
+                }`}>
                   <ul className="space-y-2.5">
                     {service.details.map((detail, idx) => (
                       <li key={idx} className="text-[11px] text-brand-text-secondary flex items-start gap-2 leading-relaxed">

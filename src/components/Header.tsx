@@ -37,8 +37,8 @@ export default function Header({ onNavClick }: HeaderProps) {
     <header
       id="site-header"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-brand-bg/90 backdrop-blur-md border-b border-brand-text-primary/10 py-4 shadow-sm'
+        isScrolled || isOpen
+          ? 'bg-brand-bg/98 backdrop-blur-lg border-b border-brand-text-primary/10 py-4 shadow-xl'
           : 'bg-transparent py-6'
       }`}
     >
@@ -82,8 +82,8 @@ export default function Header({ onNavClick }: HeaderProps) {
       {/* Mobile Dropdown */}
       <div
         id="mobile-dropdown"
-        className={`absolute top-full left-0 w-full bg-brand-bg z-40 transition-all duration-500 overflow-hidden ${
-          isOpen ? 'opacity-100 max-h-[300px] border-b border-brand-text-primary/10 shadow-lg' : 'opacity-0 max-h-0'
+        className={`absolute top-full left-0 w-full bg-brand-bg/98 backdrop-blur-lg z-40 transition-all duration-500 overflow-hidden ${
+          isOpen ? 'opacity-100 max-h-[400px] border-b border-brand-text-primary/10 shadow-2xl' : 'opacity-0 max-h-0'
         }`}
       >
         <div className="flex flex-col space-y-6 px-8 py-8">

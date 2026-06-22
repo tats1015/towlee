@@ -54,11 +54,11 @@ export default function Hero({ onNavClick }: HeroProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2.0, delay: 0.5 }}
-          className="font-serif-jp text-3xl md:text-5xl lg:text-6xl font-light text-brand-text-primary tracking-[0.2em] md:tracking-[0.3em] leading-relaxed md:leading-loose text-center max-w-3xl mb-8 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-0"
+          className="font-serif-jp text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-brand-text-primary tracking-[0.2em] md:tracking-[0.3em] leading-relaxed md:leading-loose text-center max-w-5xl mb-8 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-0"
           style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}
         >
-          <span className="inline-block">桃李不言、</span>
-          <span className="inline-block">下自成蹊。</span>
+          <span className="inline-block whitespace-nowrap">桃李不言、</span>
+          <span className="inline-block whitespace-nowrap">下自成蹊。</span>
         </motion.h1>
 
         {/* 英文の流麗なメッセージ */}

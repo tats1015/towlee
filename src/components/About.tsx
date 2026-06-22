@@ -15,8 +15,8 @@ export default function About() {
     career: [
       '青山学院大学在学中に東南アジアにてコンピューターサイエンスを専攻。',
       '卒業後、新卒でアビームコンサルティングに入社し、主にCRM・BI・データ領域で複数のプロジェクトリードを担当。',
-      '東証プライム上場企業のIT企画を経た後、HRテック企業の執行役員COOとして会社の立ち上げ・黒字化に多大な貢献。',
-      '直近では、5年で200名規模の急成長スタートアップにてプロダクト開発マネージャー(VPoE)として参画。デロイト発表の「急成長テクノロジー企業ランキング2025」でTOP10に選出される急成長に貢献。'
+      '東証プライム上場企業のIT企画を経た後、HRテック企業の執行役員COOとして会社の立ち上げ・黒字化に貢献。',
+      '直近では、5年で200名規模の急成長スタートアップにてプロダクト開発マネージャー(VPoE)として参画。デロイト発表の「急成長テクノロジー企業ランキング2025」でTOP10選出に貢献。'
     ]
   };
 
@@ -46,7 +46,7 @@ export default function About() {
             Corporate Profile & Leadership
           </span>
           <h2 className="font-serif-jp text-3xl md:text-4xl font-light text-brand-text-primary tracking-wider">
-            確かな出自と組織
+            出自と組織
           </h2>
         </div>
 
